@@ -1301,6 +1301,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;border-bottom:1p
   .services-list{padding:6px}
   .calc-svc-card{padding:12px 14px}
 }
+
+/* Mobile calculator price bar fix */
+@media(max-width:900px){
+  #mobileBar.mobile-bar{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:9999;
+    display:none;
+  }
+}
+@media(max-width:600px){
+  #mobileBar.mobile-bar{padding:12px 14px;gap:10px}
+  #mobileBar .mb-totals{gap:14px}
+  #mobileBar .mb-val{font-size:18px}
+  #mobileBar .mb-cta{padding:11px 14px;font-size:11px}
+}
 </style>
 
 <section id="calculator" aria-labelledby="calc-h">
@@ -1441,6 +1459,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;border-bottom:1p
   <div class="mb-totals">
     <div class="mb-block">
       <div class="mb-lbl">Setup</div>
+      <div class="mb-val"><span>£</span><strong id="mbSetup">0</strong></div>
+    </div>
+    <div class="mb-block">
+      <div class="mb-lbl">Monthly</div>
+      <div class="mb-val"><span>£</span><strong id="mbMonthly">0</strong></div>
+    </div>
+  </div>
+  <a href="#contact" class="mb-cta" onclick="document.getElementById('mobileBar').style.display='none'">Book call →</a>
+</div>
 
 <!-- MODAL -->
 <div class="modal-bd" id="modalBd" onclick="handleBdClick(event)">
